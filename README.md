@@ -14,8 +14,9 @@ Extracts PDF form fields into a Javascript object.
 import extractFormFields from "@cityssm/pdf-form-extract"
 
 const data = await extractFormFields('test/testForm.pdf')
-
 console.log(data)
+
+const dataWithOptions = await extractFormFields('test/testForm.pdf', { useFieldName: true })
 ```
 
 ```json
@@ -26,6 +27,13 @@ console.log(data)
   "Date": "2023-01-13"
 }
 ```
+
+### Optional Options
+
+**useFieldName**<br />
+_Default = false_<br />
+Uses the field name (provided by the Form API) as the Object key
+instead of the field key.
 
 ## Notes
 
